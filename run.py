@@ -8,37 +8,39 @@ def get_user_data():
     """
     Get the name, height, weight, and gender input date from the user.
     Run a while loop to collect all the valid input from the user. 
-    The loop stops when the input data is valid. 
+    The loop stops when all the input data is valid. 
     """
     while True:
         print('\nPlease provide us with the following requested data so we can provide you with your ideal weight and your customized workout plan.\n')
         
         global user_name
+        print('Name must have 15 characters max in total.')
         user_name = input('Please enter your name:\n')
         if validate_name(user_name):
             print(f'Welcome {user_name.title()}! Your name has been submitted.\n')
         else: continue
 
         global user_height
+        print('The height must be a number between 40cm and 250cm.')
         user_height = float(input('Please enter your height in cm:\n'))
         if validate_height_weight(user_height):
-            print('Your height has been submitted.\n')
+            print(f'Your height is {user_height}, it has been submitted.\n')
         else: continue
 
         global user_weight
+        print('The weight must be a number between 40kg and 250kg.')
         user_weight = float(input('Please enter your weight in kg:\n'))
         if validate_height_weight(user_weight):
-            print('Your weight has been submitted.\n')
+            print(f'Your weight is {user_weight}, it has been submitted.\n')
         else: continue
 
         global user_gender
+        print('The gender must be male or female.')
         user_gender = input('Enter your gender:\n')
         if validate_gender(user_gender):
-            print('Your gender has been submitted.\n')
+            print(f'Your gender is {user_gender}, it has been submitted.\n')
         else: continue
         break
-
-    return user_name, user_height, user_weight, user_gender
 
         
 def validate_name(value):
