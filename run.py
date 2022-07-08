@@ -18,28 +18,28 @@ def get_user_data():
             print(f'Welcome {user_name.title()}! Your name has been submitted.\n')
         else: continue"""
 
-        input_height = input('Please enter your height in cm:\n')
-        user_height = int(input_height)
+        """user_height = input('Please enter your height in cm:\n')
         if validate_height_weight(user_height):
             print('Your height has been submitted.\n')
-        else: continue
+        else: continue"""
 
-        user_weight = input('Please enter your weight in kg:\n')
-        user_weight = int(user_weight)
+        """user_weight = input('Please enter your weight in kg:\n')
         if validate_height_weight(user_weight):
             print('Your weight has been submitted.\n')
-        else: continue
+        else: continue"""
 
-        print('Please tell us your gender.')
-        user_weight = input('Enter your gender:\n')
+        user_gender = input('Enter your gender:\n')
+        if validate_gender(user_gender):
+            print('Your gender has been submitted.\n')
+        else: continue
         break
 
         
 def validate_name(value):
     """
-    Validates the name input provided by the user.
-    Returns a message if the input is not valid and repeats the loop.
-    Returns a message if the input is valid and proceeds with the rest of the loop.
+    Validate the name input provided by the user.
+    Return a message if the input is not valid and repeats the loop.
+    Return a message if the input is valid and proceeds with the rest of the loop.
     """
     try:
         if len(value) > 15 or value == '':
@@ -55,16 +55,34 @@ def validate_name(value):
 
 def validate_height_weight(value):
     """
-    Validates the height and the weight input provided by the user.
+    Validate the height and the weight input provided by the user.
     If the input is not a valid number prints a message and repeats the loop.
-    Returns a message if the input is valid and proceeds with the rest of the loop.
+    Retur a message if the input is valid and proceeds with the rest of the loop.
     """
     try:
-        if value not in range(40, 250):
+        if int(value) not in range(40, 250):
             raise ValueError
 
     except ValueError as e:
         print('\nInvalid input:')
+        return False
+
+    return True
+
+
+def validate_gender(value):
+    """
+    Validate the gender input provided by the user.
+    Return an error message if the input is not valid.
+    Return a validation message if the input is valid.
+    """
+    try:
+        gender_options = ['male', 'female']
+        if value.lower() not in gender_options:
+            raise ValueError
+
+    except ValueError as e:
+        print('Invalid input:')
         return False
 
     return True
