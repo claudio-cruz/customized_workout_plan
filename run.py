@@ -18,24 +18,20 @@ def get_user_data():
             print(f'Welcome {user_name.title()}! Your name has been submitted.\n')
         else: continue"""
 
-        input_height = input('Please enter your height in cm: \n')
+        input_height = input('Please enter your height in cm:\n')
         user_height = int(input_height)
-        print(type(user_height))
         if validate_height_weight(user_height):
             print('Your height has been submitted.\n')
         else: continue
 
-        input_weight = input('Please enter your weight in kg: \n')
-        try:
-            user_weight = int(input_weight)
-        except:
-            print('no')
+        user_weight = input('Please enter your weight in kg:\n')
+        user_weight = int(user_weight)
         if validate_height_weight(user_weight):
             print('Your weight has been submitted.\n')
         else: continue
 
         print('Please tell us your gender.')
-        user_weight = input('Enter your gender: ')
+        user_weight = input('Enter your gender:\n')
         break
 
         
@@ -64,7 +60,7 @@ def validate_height_weight(value):
     Returns a message if the input is valid and proceeds with the rest of the loop.
     """
     try:
-        if type(value) != int or len(str(value)) != 3:
+        if value not in range(40, 250):
             raise ValueError
 
     except ValueError as e:
