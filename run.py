@@ -13,26 +13,32 @@ def get_user_data():
     while True:
         print('\nPlease provide us with the following requested data so we can provide you with your ideal weight and your customized workout plan.\n')
         
-        """user_name = input('Please enter your name:\n')
+        global user_name
+        user_name = input('Please enter your name:\n')
         if validate_name(user_name):
             print(f'Welcome {user_name.title()}! Your name has been submitted.\n')
-        else: continue"""
+        else: continue
 
-        """user_height = input('Please enter your height in cm:\n')
+        global user_height
+        user_height = input('Please enter your height in cm:\n')
         if validate_height_weight(user_height):
             print('Your height has been submitted.\n')
-        else: continue"""
+        else: continue
 
-        """user_weight = input('Please enter your weight in kg:\n')
+        global user_weight
+        user_weight = input('Please enter your weight in kg:\n')
         if validate_height_weight(user_weight):
             print('Your weight has been submitted.\n')
-        else: continue"""
+        else: continue
 
+        global user_gender
         user_gender = input('Enter your gender:\n')
         if validate_gender(user_gender):
             print('Your gender has been submitted.\n')
         else: continue
         break
+
+    return user_name, user_height, user_weight, user_gender
 
         
 def validate_name(value):
@@ -88,4 +94,23 @@ def validate_gender(value):
     return True
 
 
+def calculate_ideal_weight(height, gender):
+    """
+    Calculate the ideal weight and add it to the variable ideal_weight.
+    """
+    global ideal_weight
+    if gender == 'male':
+        
+        ideal_weight = 50 + (0.91 * (height - 152.4))
+        print(f'Your ideal weight is {round(ideal_weight, 1)}')
+        return ideal_weight
+    elif gender == 'female':
+        ideal_weight = 45.5 + (0.91 * (height - 152.4))
+        print(f'Your ideal weight is {round(ideal_weight, 1)}')
+        return ideal_weight
+        
+
+
 get_user_data()
+calculate_ideal_weight(int(user_height), user_gender)
+print(ideal_weight)
