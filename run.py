@@ -46,7 +46,7 @@ def get_user_data():
 def validate_name(value):
     """
     Validate the name input provided by the user.
-    Return a message if the input is not valid and repeats the loop.
+    Return a message if the input is not valid and repeat the loop.
     Return a message if the input is valid and proceeds with the rest of the loop.
     """
     try:
@@ -64,7 +64,7 @@ def validate_name(value):
 def validate_height_weight(value):
     """
     Validate the height and the weight input provided by the user.
-    If the input is not a valid number prints a message and repeats the loop.
+    If the input is not a valid number prints a message and repeat the loop.
     Retur a message if the input is valid and proceeds with the rest of the loop.
     """
     try:
@@ -81,7 +81,7 @@ def validate_height_weight(value):
 def validate_gender(value):
     """
     Validate the gender input provided by the user.
-    Return an error message if the input is not valid.
+    Return an error message if the input is not valid and repeat the loop.
     Return a validation message if the input is valid.
     """
     try:
@@ -164,7 +164,7 @@ def get_workout_goal(name):
 def validate_workout_goal(value):
     """
     Validate the workout goal input provided by the user.
-    Return an error message if the input is not valid.
+    Return an error message if the input is not valid and repeat the loop.
     Return a validation message if the input is valid.
     """
     try:
@@ -197,6 +197,24 @@ def get_workout_level(name):
         if validate_workout_goal(user_workout_level):
             print(f'You submited {user_workout_level} successfully!\n')
             break
+
+
+def validate_workout_level(value):
+    """
+    Validate the workout level input provided by the user.
+    Return an error message if the input is not valid and repeat the loop.
+    Return a validation message if the input is valid.
+    """
+    try:
+        workout_plan_options = ["low level", "medium level", "hight level"]
+        if value.lower() not in workout_plan_options:
+            raise ValueError
+
+    except ValueError as e:
+        print('Invalid input:')
+        return False
+
+    return True
 
 
 get_user_data()
