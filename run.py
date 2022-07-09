@@ -176,7 +176,27 @@ def validate_workout_goal(value):
         print('Invalid input:')
         return False
 
-    return True    
+    return True
+
+
+def get_workout_level(name):
+    """
+    Get the workout lever input from the user.
+    Give 3 input options to the user: low level, medium level and hight level.
+    """
+    global user_workout_level
+
+    while True:
+        print(f'\n{name.title()}, write one of the following 3 options:')
+        print('"low level", "medium level", or "hight level"')
+        print('Low level    ->  workout 2 days a week.')
+        print('Medium level ->  workout 4 days a week.')
+        print('Hight level  ->  workout 6 days a week.')
+        user_workout_level = input("Tell us wha's your workout level:\n")
+
+        if validate_workout_goal(user_workout_level):
+            print(f'You submited {user_workout_level} successfully!\n')
+            break
 
 
 get_user_data()
