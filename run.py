@@ -11,7 +11,6 @@ def get_user_data():
     The loop stops when all the input data is valid. 
     """
     while True:
-        print('\nPlease provide us with the following requested data so we can provide you with your ideal weight and your customized workout plan.\n')
         
         global user_name
         print('Name must have 15 characters max in total.')
@@ -194,7 +193,7 @@ def get_workout_level(name):
         print('Hight level  ->  workout 6 days a week.')
         user_workout_level = input("Tell us wha's your workout level:\n")
 
-        if validate_workout_goal(user_workout_level):
+        if validate_workout_level(user_workout_level):
             print(f'You submited {user_workout_level} successfully!\n')
             break
 
@@ -217,7 +216,19 @@ def validate_workout_level(value):
     return True
 
 
-get_user_data()
-calculate_ideal_weight(user_height, user_gender)
-calculate_bmi(user_weight, user_height)
-get_workout_goal(user_name)
+def main():
+    """
+    Run all program functions.
+    """
+    get_user_data()
+    calculate_ideal_weight(user_height, user_gender)
+    calculate_bmi(user_weight, user_height)
+    get_workout_goal(user_name)
+    get_workout_level(user_name)
+
+
+print('\nWelcome to your customized workout plan app.')
+print('Please provide us with the following requested data so we can generate'
+ ' your ideal weight, BMI, and your customized workout plan.\n')
+
+main()
