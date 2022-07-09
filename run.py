@@ -24,14 +24,14 @@ def get_user_data():
         print('The height must be a number between 40cm and 250cm.')
         user_height = float(input('Please enter your height in cm:\n'))
         if validate_height_weight(user_height):
-            print(f'Your height is {user_height}, it has been submitted.\n')
+            print(f'Your height is {user_height}cm, it has been submitted.\n')
         else: continue
 
         global user_weight
         print('The weight must be a number between 40kg and 250kg.')
         user_weight = float(input('Please enter your weight in kg:\n'))
         if validate_height_weight(user_weight):
-            print(f'Your weight is {user_weight}, it has been submitted.\n')
+            print(f'Your weight is {user_weight}kg, it has been submitted.\n')
         else: continue
 
         global user_gender
@@ -108,7 +108,7 @@ def calculate_ideal_weight(height, gender):
         return ideal_weight
     elif gender == 'female':
         ideal_weight = 45.5 + (0.91 * (height - 152.4))
-        print(f'Your ideal weight is {round(ideal_weight, 1)}')
+        print(f'Your ideal weight is {round(ideal_weight, 1)}kg.')
         return ideal_weight
 
 
@@ -144,6 +144,42 @@ def calculate_bmi(weight, height):
          print(key, '->', bmi_chart_dic[key])
 
 
+def get_workout_goal(name):
+    """
+    Get the workout goal input from the user.
+    Print a message with the option chosen and submit it.
+    """
+    global user_workout_goal
+
+    while True:
+        print(f'\n{name.title()}, write one of the following 2 options:')
+        print('"burn fat" or "gain muscle"')
+        user_workout_goal = input("Tell us wha's your workout goal:\n")
+
+        if validate_workout_goal(user_workout_goal):
+            print(f'You submited {user_workout_goal} successfully!\n')
+            break
+
+
+def validate_workout_goal(value):
+    """
+    Validate the workout goal input provided by the user.
+    Return an error message if the input is not valid.
+    Return a validation message if the input is valid.
+    """
+    try:
+        workout_goal_options = ['burn fat', 'gain muscle']
+        if value.lower() not in workout_goal_options:
+            raise ValueError
+
+    except ValueError as e:
+        print('Invalid input:')
+        return False
+
+    return True    
+
+
 get_user_data()
 calculate_ideal_weight(user_height, user_gender)
 calculate_bmi(user_weight, user_height)
+get_workout_goal(user_name)
