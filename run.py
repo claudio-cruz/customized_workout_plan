@@ -152,9 +152,9 @@ def get_workout_goal(name):
     global user_workout_goal
 
     while True:
-        print(f'\n{name.title()}, write one of the following 2 options:')
-        print('"burn fat" or "gain muscle"')
-        user_workout_goal = input("Tell us wha's your workout goal:\n")
+        print(f"\n{name.title()}, tell us wha's your workout goal.")
+        print('Write one of the following 2 options:')
+        user_workout_goal = input('"burn fat" or "gain muscle"\n')
 
         if validate_workout_goal(user_workout_goal):
             print(f'You submited {user_workout_goal} successfully!\n')
