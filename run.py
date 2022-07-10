@@ -3,6 +3,8 @@ from unittest import expectedFailure
 
 from tomlkit import integer
 
+import workout_plans
+
 
 def get_user_data():
     """
@@ -228,7 +230,7 @@ def personalized_workout_plan():
     # Burn fat male workout plans.
     if user_workout_goal == 'burn fat' and user_gender == 'male':
         if user_workout_level == 'low level':
-            print('workout plan burn fat male 2 days')
+            workout_plans.fat_loss_male_low_level_workout()
         elif user_workout_level == 'medium level':
             print('workout plan burn fat male 4 days')
         elif user_workout_level == 'hight level':
