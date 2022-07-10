@@ -1,4 +1,7 @@
 def massege_to_user(name, height, weight, gender, dl_weight, bmi, goal, level):
+    """
+    Print user inputs.
+    """
     print(f'Well done {name.title()}, you submitted all inputs successfully!\n')
     print(f'Your height: {height}cm;')
     print(f'Your weight: {weight}kg;')
@@ -15,7 +18,7 @@ def fat_loss_male_low_level_workout():
     """
     Print the fat loss, male, low lever workout plan.
     """
-    print('Day 1:')
+    print('Monday:')
     print('Cardio - Run 20 minutes;')
     print('Legs - Bodyweight squats 20 reps 5 times;')
     print('Legs - Bodyweight split squats 30 reps 4 times;')
@@ -24,7 +27,7 @@ def fat_loss_male_low_level_workout():
     print('Abs - Abdominal crunch 20 reps 3 times;')
     print('Cardio - Spinning 20 minutes at high intensity;\n')
 
-    print('Day 2:')
+    print('Thursday:')
     print('Cardio - Elliptical 20 minutes;')
     print('Chest - Push ups 20 reps 5 times;')
     print('Back - Pull ups machine 20 reps 5 times;')
