@@ -100,15 +100,16 @@ def calculate_ideal_weight(height, gender):
     Calculate the ideal weight and add it to the variable ideal_weight.
     """
     global ideal_weight
+
     if gender == 'male':
-        
         ideal_weight = 50 + (0.91 * (height - 152.4))
-        print(f'Your ideal weight is {round(ideal_weight, 1)}')
-        return ideal_weight
+        print(f'-> Your ideal weight is {round(ideal_weight, 1)}kg')
+        
     elif gender == 'female':
         ideal_weight = 45.5 + (0.91 * (height - 152.4))
-        print(f'Your ideal weight is {round(ideal_weight, 1)}kg.')
-        return ideal_weight
+        print(f'-> Your ideal weight is {round(ideal_weight, 1)}kg.')
+    
+    return ideal_weight
 
 
 def calculate_bmi(weight, height):
@@ -121,17 +122,21 @@ def calculate_bmi(weight, height):
     user_bmi = weight / (height / 100)**2
 
     if user_bmi < 18.5:
-        print(f'{user_name.title()}, your BMI is {round(user_bmi, 1)} which means that you are underweight.\n')
+        print(f'-> {user_name.title()}, your BMI is {round(user_bmi, 1)} '
+        'which means that you are underweight.\n')
     
     elif user_bmi <= 24.9:
-        print(f'{user_name.title()}, your BMI is {round(user_bmi, 1)} which means that you you have a healthy weight.\n')
+        print(f'-> {user_name.title()}, your BMI is {round(user_bmi, 1)} '
+        'which means that you you have a healthy weight.\n')
     
     elif user_bmi <= 29.9:
-        print(f'{user_name.title()}, your BMI is {round(user_bmi, 1)} which means that you are overweight.\n')
+        print(f'-> {user_name.title()}, your BMI is {round(user_bmi, 1)} '
+        'which means that you are overweight.\n')
     
     elif user_bmi >= 30.0:
-        print(f'{user_name.title()}, your BMI is {round(user_bmi, 1)} which means that you are obese.\n')
-    
+        print(f'-> {user_name.title()}, your BMI is {round(user_bmi, 1)} '
+        'which means that you are obese.\n')
+
     bmi_chart_dic = {
         'Below 18.5': 'Underweight',
         '18.5-24.9': 'Healthy weight',
