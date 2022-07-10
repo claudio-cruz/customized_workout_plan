@@ -215,6 +215,47 @@ def validate_workout_level(value):
 
     return True
 
+def personalized_workout_plan():
+    """
+    Return personalized workout plan.
+    """
+
+    # Burn fat male workout plans.
+    if user_workout_goal == 'burn fat' and user_gender == 'male':
+        if user_workout_level == 'low level':
+            print('workout plan burn fat male 2 days')
+        elif user_workout_level == 'medium level':
+            print('workout plan burn fat male 4 days')
+        elif user_workout_level == 'hight level':
+            print('workout plan burn fat male 6 days')
+    
+    # Burn fat female worout plans.
+    elif user_workout_goal == 'burn fat' and user_gender == 'female':
+        if user_workout_level == 'low level':
+            print('workout plan burn fat female 2 days')
+        elif user_workout_level == 'medium level':
+            print('workout plan burn fat female 4 days')
+        elif user_workout_level == 'hight level':
+            print('workout plan burn fat female 6 days')
+
+    # Gain muscle male workout plans.
+    elif user_workout_goal == 'gain muscle' and user_gender == 'male':
+        if user_workout_level == 'low level':
+            print('workout plan gain muscle male 2 days')
+        elif user_workout_level == 'medium level':
+            print('workout plan gain muscle male 4 days')
+        elif user_workout_level == 'hight level':
+            print('workout plan gain muscle male 6 days')
+
+    # Gain muscle female workout plans.
+    elif user_workout_goal == 'gain muscle' and user_gender == 'female':
+        if user_workout_level == 'low level':
+            print('workout plan gain muscle female 2 days')
+        elif user_workout_level == 'medium level':
+            print('workout plan gain muscle female 4 days')
+        elif user_workout_level == 'hight level':
+            print('workout plan gain muscle female 6 days')
+
 
 def main():
     """
@@ -225,6 +266,7 @@ def main():
     calculate_bmi(user_weight, user_height)
     get_workout_goal(user_name)
     get_workout_level(user_name)
+    personalized_workout_plan()
 
 
 print('\nWelcome to your customized workout plan app.')
