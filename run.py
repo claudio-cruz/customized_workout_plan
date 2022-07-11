@@ -160,7 +160,7 @@ def get_workout_goal(name):
     while True:
         print(f"\n{name.title()}, tell us wha's your workout goal.")
         print('Write one of the following 2 options:')
-        user_workout_goal = input('"burn fat" or "gain muscle"\n')
+        user_workout_goal = input('"weight loss" or "gain muscle"\n')
 
         if validate_workout_goal(user_workout_goal):
             print(f'You submited {user_workout_goal} successfully!\n')
@@ -174,7 +174,7 @@ def validate_workout_goal(value):
     Return a validation message if the input is valid.
     """
     try:
-        workout_goal_options = ['burn fat', 'gain muscle']
+        workout_goal_options = ['weight loss', 'gain muscle']
         if value.lower() not in workout_goal_options:
             raise ValueError
 
@@ -227,24 +227,18 @@ def personalized_workout_plan():
     Return personalized workout plan.
     """
 
-    # Burn fat male workout plans.
-    if user_workout_goal == 'burn fat' and user_gender == 'male':
+    # Weight loss male workout plans.
+    if user_workout_goal == 'weight loss' and user_gender == 'male':
         if user_workout_level == 'low level':
-            workout_plans.massege_to_user(user_name, user_height, user_weight, 
-            user_gender, ideal_weight, user_bmi, user_workout_goal, 
-            user_workout_level)
-            workout_plans.fat_loss_male_low_level_workout()
+            workout_plans.weight_loss_male_low_level_workout()
         elif user_workout_level == 'medium level':
-            print('workout plan burn fat male 4 days')
+            workout_plans.weight_loss_male_medium_level_workout()
         elif user_workout_level == 'hight level':
             print('workout plan burn fat male 6 days')
     
-    # Burn fat female worout plans.
-    elif user_workout_goal == 'burn fat' and user_gender == 'female':
+    # Weight loss female worout plans.
+    elif user_workout_goal == 'weight loss' and user_gender == 'female':
         if user_workout_level == 'low level':
-            workout_plans.massege_to_user(user_name, user_height, user_weight, 
-            user_gender, ideal_weight, user_bmi, user_workout_goal, 
-            user_workout_level)
             workout_plans.weight_loss_female_low_level_workout()
         elif user_workout_level == 'medium level':
             print('workout plan burn fat female 4 days')
@@ -279,6 +273,9 @@ def main():
     calculate_bmi(user_weight, user_height)
     get_workout_goal(user_name)
     get_workout_level(user_name)
+    workout_plans.massege_to_user(user_name, user_height, user_weight, 
+            user_gender, ideal_weight, user_bmi, user_workout_goal, 
+            user_workout_level)
     personalized_workout_plan()
 
 
