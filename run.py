@@ -242,7 +242,10 @@ def personalized_workout_plan():
     # Burn fat female worout plans.
     elif user_workout_goal == 'burn fat' and user_gender == 'female':
         if user_workout_level == 'low level':
-            print('workout plan burn fat female 2 days')
+            workout_plans.massege_to_user(user_name, user_height, user_weight, 
+            user_gender, ideal_weight, user_bmi, user_workout_goal, 
+            user_workout_level)
+            workout_plans.weight_loss_female_low_level_workout()
         elif user_workout_level == 'medium level':
             print('workout plan burn fat female 4 days')
         elif user_workout_level == 'hight level':

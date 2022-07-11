@@ -18,7 +18,7 @@ def fat_loss_male_low_level_workout():
     """
     Print the fat loss, male, low lever workout plan.
     """
-    print('Monday:')
+    print('-> Monday:')
     print('Cardio - Run 20 minutes;')
     print('Legs - Bodyweight squats 20 reps 5 times;')
     print('Legs - Bodyweight split squats 30 reps 4 times;')
@@ -27,7 +27,7 @@ def fat_loss_male_low_level_workout():
     print('Abs - Abdominal crunch 20 reps 3 times;')
     print('Cardio - Spinning 20 minutes at high intensity;\n')
 
-    print('Thursday:')
+    print('-> Thursday:')
     print('Cardio - Elliptical 20 minutes;')
     print('Chest - Push ups 20 reps 5 times;')
     print('Back - Pull ups machine 20 reps 5 times;')
@@ -35,3 +35,28 @@ def fat_loss_male_low_level_workout():
     print('Triceps - Cable push-down 15 reps 3 times;')
     print('Low-back - Superman 20 reps 3 times;')
     print('Cardio - Rowing machine  20 minutes at high intensity;\n')
+
+
+def weight_loss_female_low_level_workout():
+    """
+    Print the fat loss, female, low lever workout plan.
+    """
+    print('-> Monday:')
+    print('Cardio - Run 20 minutes;')
+    print('Legs - Bodyweight squats 20 reps 5 times;')
+    print('Legs - Bodyweight split squats 30 reps 4 times;')
+    print('Glute - Glute bridge 15 reps 4 times;')
+    print('Shoulders - Dumbbell press 15 reps 3 times;')
+    print('Abs - Abdominal crunch 20 reps 3 times;')
+    print('Cardio - Spinning 20 minutes at high intensity;\n')
+
+    print('-> Thursday:')
+    print('Cardio - Elliptical 20 minutes;')
+    print('Chest - Push ups (knees on the floor) 20 reps 4 times;')
+    print('Back - Pull ups machine 20 reps 4 times;')
+    print('Legs - Leg press machine 15 reps 4 times;')
+    print('Legs - Romanian Deadlift 15 reps 4 times;')
+    print('Cardio - Stair climber 15 minutes;')
+    print('Cardio - Rowing machine  15 minutes at high intensity;\n')
+
+    
