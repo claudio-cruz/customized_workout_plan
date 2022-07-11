@@ -1,3 +1,5 @@
+# Weight loss workout plans:
+
 def massege_to_user(name, height, weight, gender, dl_weight, bmi, goal, level):
     """
     Print user inputs.
@@ -210,3 +212,25 @@ def weight_loss_female_hight_level_workout():
 
     print('-> Saturday:')
     print('Cardio - Run 40 minutes medium intensity;\n')
+
+
+# Gain muscle workout plans:
+
+def gain_muscle_male_low_level_workout():
+    """
+    Print the gain muscle, male, low lever workout plan.
+    """
+    print('-> Monday:')
+    print('Cardio - Run 10 minutes;')
+    print('Legs - Squats superset Leg extention 12 reps 4 times;')
+    print('Legs - Split squats superset leg curl 12 reps 4 times;')
+    print('Shoulders - Dumbbell press superset Lateral raise 12 reps 3 times;')
+    print('Abs - Abdominal crunch 20 reps 4 times;\n')
+    
+
+    print('-> Thursday:')
+    print('Cardio - Elliptical 10 minutes;')
+    print('Chest - Barbell bench press superset push ups 12 reps 5 times;')
+    print('Back - Pull ups machine superset cable row 12 reps 5 times;')
+    print('Biceps & Triceps - Barbell curl + cable push-down 12 reps 3 times;')
+    print('Low-back - Superman 20 reps 3 times;\n')
