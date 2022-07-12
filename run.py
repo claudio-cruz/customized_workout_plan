@@ -60,15 +60,14 @@ def validate_name(value):
 def validate_height_weight(value):
     """
     Validate the height and the weight input provided by the user.
-    If the input is not a valid number prints a message and repeat the loop.
-    Retur a message if the input is valid and proceeds with the rest of the loop.
+    If the input is not a valid number print a message and repeat the loop.
     """
     try:
         if value not in range(40, 250):
             raise ValueError
 
     except ValueError as e:
-        print('\nInvalid input:')
+        print('\nInvalid input, it must be a number between 40 and 250!\n')
         return False
 
     return True
