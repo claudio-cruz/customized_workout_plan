@@ -250,7 +250,7 @@ def personalized_workout_plan():
         if user_workout_level == 'low level':
             workout_plans.gain_muscle_male_low_level_workout()
         elif user_workout_level == 'medium level':
-            print('workout plan gain muscle male 4 days')
+            workout_plans.gain_muscle_male_medium_level_workout()
         elif user_workout_level == 'hight level':
             print('workout plan gain muscle male 6 days')
 
