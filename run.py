@@ -15,31 +15,31 @@ def get_user_data():
     while True:
         
         global user_name
-        print('Name must have 15 characters max in total.')
-        user_name = input('Please enter your name:\n')
+        global user_height
+        global user_weight
+        global user_gender
+
+        user_name = input('Please enter your name: (1 to 15 characters max)\n')
         if validate_name(user_name):
-            print(f'Welcome {user_name.title()}! Your name has been submitted.\n')
+            print(f'Hi {user_name.title()}, your name has been submitted.\n')
         else: continue
 
-        global user_height
-        print('The height must be a number between 40cm and 250cm.')
+        
+        print('The height must be a number between 40 and 250 cm.')
         user_height = float(input('Please enter your height in cm:\n'))
         if validate_height_weight(user_height):
             print(f'Your height is {user_height}cm, it has been submitted.\n')
         else: continue
 
-        global user_weight
-        print('The weight must be a number between 40kg and 250kg.')
+        print('The weight must be a number between 40 and 250 kg.')
         user_weight = float(input('Please enter your weight in kg:\n'))
         if validate_height_weight(user_weight):
             print(f'Your weight is {user_weight}kg, it has been submitted.\n')
         else: continue
 
-        global user_gender
-        print('The gender must be male or female.')
-        user_gender = input('Enter your gender:\n')
+        user_gender = input('Enter your gender: ("male" or "female")\n')
         if validate_gender(user_gender):
-            print(f'Your gender is {user_gender}, it has been submitted.\n')
+            print(f'You are a {user_gender}, it has been submitted.\n')
         else: continue
         break
 
@@ -110,8 +110,6 @@ def calculate_ideal_weight(height, gender):
     elif gender == 'female':
         ideal_weight = 45.5 + (0.91 * (height - 152.4))
         print(f'-> Your ideal weight is {round(ideal_weight, 1)}kg.')
-    
-    return ideal_weight
 
 
 def calculate_bmi(weight, height):
