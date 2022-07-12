@@ -10,6 +10,7 @@ def get_user_data():
     """
     Get the name, height, weight, and gender input date from the user.
     Run a while loop to collect all the valid input from the user. 
+    Print a message when the input is valid.
     The loop stops when all the input data is valid. 
     """
     while True:
@@ -48,15 +49,9 @@ def validate_name(value):
     """
     Validate the name input provided by the user.
     Return a message if the input is not valid and repeat the loop.
-    Return a message if the input is valid and proceeds with the rest of the loop.
     """
-    try:
-        if len(value) > 15 or value == '':
-            raise ValueError
-            
-    except ValueError as e:
-        print(f'\nInvalid name: please submit your name with fifteen characters or less in total.')
-        print('The name input can not be empty.\n')
+    if len(value) not in range(1, 15):
+        print('\nInvalid name. The name input must be 1 to 15 characters max\n')
         return False
 
     return True
