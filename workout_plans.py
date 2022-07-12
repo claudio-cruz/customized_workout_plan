@@ -13,7 +13,7 @@ def massege_to_user(name, height, weight, gender, dl_weight, bmi, goal, level):
     print(f'Your goal: {goal};')
     print(f'Your level: {level};\n')
 
-    print('This is the personalized workout plan for your needs:\n')
+    print('This is the personalized workout plan for your needs:')
 
 
 def weight_loss_male_low_level_workout():
@@ -234,3 +234,26 @@ def gain_muscle_male_low_level_workout():
     print('Back - Pull ups machine superset cable row 12 reps 5 times;')
     print('Biceps & Triceps - Barbell curl + cable push-down 12 reps 3 times;')
     print('Low-back - Superman 20 reps 3 times;\n')
+
+
+def gain_muscle_female_low_level_workout():
+    """
+    Print the gain muscle, female, low lever workout plan.
+    """
+    print(
+"""
+-> Monday:
+Cardio - Run 10 minutes
+Legs - Squats superset Leg extention 12 reps 4 times
+Legs - Split squats superset leg curl 12 reps 4 times
+Shoulders - Dumbbell press superset Lateral raise 12 reps 3 times
+Abs - Abdominal crunch 20 reps 4 times
+
+-> Thursday
+Cardio - Elliptical 10 minutes
+Chest - Barbell bench press superset push ups 12 reps 4 times
+Back - Pull ups machine superset cable row 12 reps 4 times
+Glute - Weighted hip thrust superset Side lunge 12 reps 4 times
+Low-back - Superman 20 reps 3 times
+"""
+)
