@@ -252,7 +252,7 @@ def personalized_workout_plan():
         elif user_workout_level == 'medium level':
             workout_plans.gain_muscle_male_medium_level_workout()
         elif user_workout_level == 'hight level':
-            print('workout plan gain muscle male 6 days')
+            workout_plans.gain_muscle_male_high_level_workout()
 
     # Gain muscle female workout plans.
     elif user_workout_goal == 'gain muscle' and user_gender == 'female':
