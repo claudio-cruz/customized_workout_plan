@@ -180,7 +180,7 @@ def get_week_workout_days():
 
     while True:
         print('\nTell us how many days per week you want to train?')
-        user_workout_days = input("Write only ("2", "4", or "6") days:\n")
+        user_workout_days = input('Write only ("2", "4", or "6") days:\n')
 
         if validate_week_workout_days(user_workout_days):
             print(f'You submited {user_workout_days} days successfully!\n')
@@ -193,13 +193,10 @@ def validate_week_workout_days(value):
     Return an error message if the input is not valid and repeat the loop.
     Return a validation message if the input is valid.
     """
-    try:
-        workout_plan_options = ["low level", "medium level", "hight level"]
-        if value.lower() not in workout_plan_options:
-            raise ValueError
-
-    except ValueError as e:
-        print('Invalid input:')
+    
+    workout_days_options = ["2", "4", "6"]
+    if value not in workout_days_options:
+        print('Invalid input, write ("2", "4", or "6")!')
         return False
 
     return True
@@ -211,38 +208,38 @@ def personalized_workout_plan():
 
     # Weight loss male workout plans.
     if user_workout_goal == 'weight loss' and user_gender == 'male':
-        if user_workout_days == 'low level':
+        if user_workout_days == '2':
             workout_plans.weight_loss_male_low_level_workout()
-        elif user_workout_days == 'medium level':
+        elif user_workout_days == '4':
             workout_plans.weight_loss_male_medium_level_workout()
-        elif user_workout_days == 'hight level':
+        elif user_workout_days == '6':
             workout_plans.weight_loss_male_hight_level_workout()
     
     # Weight loss female worout plans.
     elif user_workout_goal == 'weight loss' and user_gender == 'female':
-        if user_workout_days == 'low level':
+        if user_workout_days == '2':
             workout_plans.weight_loss_female_low_level_workout()
-        elif user_workout_days == 'medium level':
+        elif user_workout_days == '4':
             workout_plans.weight_loss_female_medium_level_workout()
-        elif user_workout_days == 'hight level':
+        elif user_workout_days == '6':
              workout_plans.weight_loss_female_hight_level_workout()
 
     # Gain muscle male workout plans.
     elif user_workout_goal == 'gain muscle' and user_gender == 'male':
-        if user_workout_days == 'low level':
+        if user_workout_days == '2':
             workout_plans.gain_muscle_male_low_level_workout()
-        elif user_workout_days == 'medium level':
+        elif user_workout_days == '4':
             workout_plans.gain_muscle_male_medium_level_workout()
-        elif user_workout_days == 'hight level':
+        elif user_workout_days == '6':
             workout_plans.gain_muscle_male_high_level_workout()
 
     # Gain muscle female workout plans.
     elif user_workout_goal == 'gain muscle' and user_gender == 'female':
-        if user_workout_days == 'low level':
+        if user_workout_days == '2':
             workout_plans.gain_muscle_female_low_level_workout()
-        elif user_workout_days == 'medium level':
+        elif user_workout_days == '4':
             workout_plans.gain_muscle_female_medium_level_workout()
-        elif user_workout_days == 'hight level':
+        elif user_workout_days == '6':
             workout_plans.gain_muscle_female_high_level_workout()
 
 
