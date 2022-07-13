@@ -1,5 +1,7 @@
 # Weight loss workout plans:
-def messege_to_user(name, height, weight, gender, dl_weight, bmi, goal, days):
+
+
+def print_inputs(name, height, weight, gender, dl_weight, bmi, goal, days):
     """
     Print user inputs.
     """
@@ -15,7 +17,7 @@ def messege_to_user(name, height, weight, gender, dl_weight, bmi, goal, days):
     print('This is the personalized workout plan for your needs:')
 
 
-def weight_loss_male_2days_workout():
+def print_weight_loss_male_2days_workout():
     """
     Print the weight loss, male, 2 days per week workout plan.
     """
@@ -42,7 +44,7 @@ Cardio - Rowing machine 20 minutes at high intensity
     )
 
 
-def weight_loss_female_2days_workout():
+def print_weight_loss_female_2days_workout():
     """
     Print the weight loss, female, 2 days per week workout plan.
     """
@@ -69,7 +71,7 @@ Cardio - Rowing machine 15 minutes at high intensity
     )
 
 
-def weight_loss_male_4days_workout():
+def print_weight_loss_male_4days_workout():
     """
     Print the weight loss, male, 4 days per week workout plan.
     """
@@ -105,7 +107,7 @@ Cardio - Rowing machine 10 minutes at high intensity
     )
 
 
-def weight_loss_female_4days_workout():
+def print_weight_loss_female_4days_workout():
     """
     Print the weight loss, female, 4 days per week workout plan.
     """
@@ -141,7 +143,7 @@ Cardio - Rowing machine 10 minutes at high intensity
     )
 
 
-def weight_loss_male_6days_workout():
+def print_weight_loss_male_6days_workout():
     """
     Print the weight loss, male, 6 days per week workout plan.
     """
@@ -189,7 +191,7 @@ Cardio - Run 40 minutes medium intensity
     )
 
 
-def weight_loss_female_6days_workout():
+def print_weight_loss_female_6days_workout():
     """
     Print the weight loss, female, 6 days per week workout plan.
     """
@@ -239,7 +241,7 @@ Cardio - Run 40 minutes medium intensity
 
 # Gain muscle workout plans:
 
-def gain_muscle_male_2days_workout():
+def print_gain_muscle_male_2days_workout():
     """
     Print the gain muscle, male, 2 days per week workout plan.
     """
@@ -263,7 +265,7 @@ Low-back - Superman 20 reps 3 times
     )
 
 
-def gain_muscle_female_2days_workout():
+def print_gain_muscle_female_2days_workout():
     """
     Print the gain muscle, female, 2 days per week workout plan.
     """
@@ -286,7 +288,7 @@ Low-back - Superman 20 reps 3 times
 )
 
 
-def gain_muscle_male_4days_workout():
+def print_gain_muscle_male_4days_workout():
     """
     Print the gain muscle, male, 4 days per week workout plan.
     """
@@ -323,7 +325,7 @@ Low-back - Back extension 20 reps 3 times
     )
 
 
-def gain_muscle_female_4days_workout():
+def print_gain_muscle_female_4days_workout():
     """
     Print the gain muscle, female, 4 days per week workout plan.
     """
@@ -360,7 +362,7 @@ Cardio - Stairs machin 20 minutes high intensity
     )
 
 
-def gain_muscle_male_6days_workout():
+def print_gain_muscle_male_6days_workout():
     """
     Print the gain muscle, male, 6 days per week workout plan.
     """
@@ -411,7 +413,7 @@ Low-back - Back extensions 20 reps 3 times
     )
 
 
-def gain_muscle_female_6days_workout():
+def print_gain_muscle_female_6days_workout():
     """
     Print the gain muscle, female, 6 days per week workout plan.
     """
