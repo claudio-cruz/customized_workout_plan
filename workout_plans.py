@@ -1,10 +1,9 @@
 # Weight loss workout plans:
-
 def messege_to_user(name, height, weight, gender, dl_weight, bmi, goal, days):
     """
     Print user inputs.
     """
-    print(f'Well done {name.title()}, you submitted all inputs successfully!\n')
+    print(f'Well done {name.title()}, all inputs successfully submitted!\n')
     print(f'Your height: {height}cm')
     print(f'Your weight: {weight}kg')
     print(f'Your gender: {gender}')

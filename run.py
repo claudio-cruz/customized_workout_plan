@@ -96,6 +96,7 @@ def calculate_ideal_weight(height, gender):
     Calculate the ideal weight and add it to the variable ideal_weight.
     """
     global ideal_weight
+    height = float(height)
 
     if gender == 'male':
         ideal_weight = 50 + (0.91 * (height - 152.4))
@@ -113,6 +114,8 @@ def calculate_bmi(weight, height):
     Print a message with the BMI chart for men and women.
     """
     global user_bmi
+    weight = float(weight)
+    height = float(height)
     user_bmi = weight / (height / 100)**2
 
     if user_bmi < 18.5:
