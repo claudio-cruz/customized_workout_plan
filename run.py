@@ -203,44 +203,44 @@ def validate_week_workout_days(value):
 
 def personalized_workout_plan():
     """
-    Return personalized workout plan.
+    Print personalized workout plan.
     """
 
     # Weight loss male workout plans.
     if user_workout_goal == 'weight loss' and user_gender == 'male':
         if user_workout_days == '2':
-            workout_plans.weight_loss_male_low_level_workout()
+            workout_plans.weight_loss_male_2days_workout()
         elif user_workout_days == '4':
-            workout_plans.weight_loss_male_medium_level_workout()
+            workout_plans.weight_loss_male_4days_workout()
         elif user_workout_days == '6':
-            workout_plans.weight_loss_male_hight_level_workout()
+            workout_plans.weight_loss_male_6days_workout()
     
     # Weight loss female worout plans.
     elif user_workout_goal == 'weight loss' and user_gender == 'female':
         if user_workout_days == '2':
-            workout_plans.weight_loss_female_low_level_workout()
+            workout_plans.weight_loss_female_2days_workout()
         elif user_workout_days == '4':
-            workout_plans.weight_loss_female_medium_level_workout()
+            workout_plans.weight_loss_female_4days_workout()
         elif user_workout_days == '6':
-             workout_plans.weight_loss_female_hight_level_workout()
+             workout_plans.weight_loss_female_6days_workout()
 
     # Gain muscle male workout plans.
     elif user_workout_goal == 'gain muscle' and user_gender == 'male':
         if user_workout_days == '2':
-            workout_plans.gain_muscle_male_low_level_workout()
+            workout_plans.gain_muscle_male_2days_workout()
         elif user_workout_days == '4':
-            workout_plans.gain_muscle_male_medium_level_workout()
+            workout_plans.gain_muscle_male_4days_workout()
         elif user_workout_days == '6':
-            workout_plans.gain_muscle_male_high_level_workout()
+            workout_plans.gain_muscle_male_6days_workout()
 
     # Gain muscle female workout plans.
     elif user_workout_goal == 'gain muscle' and user_gender == 'female':
         if user_workout_days == '2':
-            workout_plans.gain_muscle_female_low_level_workout()
+            workout_plans.gain_muscle_female_2days_workout()
         elif user_workout_days == '4':
-            workout_plans.gain_muscle_female_medium_level_workout()
+            workout_plans.gain_muscle_female_4days_workout()
         elif user_workout_days == '6':
-            workout_plans.gain_muscle_female_high_level_workout()
+            workout_plans.gain_muscle_female_6days_workout()
 
 
 def main():
@@ -252,7 +252,7 @@ def main():
     calculate_bmi(user_weight, user_height)
     get_workout_goal(user_name)
     get_week_workout_days()
-    workout_plans.massege_to_user(user_name, user_height, user_weight, 
+    workout_plans.messege_to_user(user_name, user_height, user_weight, 
             user_gender, ideal_weight, user_bmi, user_workout_goal, 
             user_workout_days)
     personalized_workout_plan()
