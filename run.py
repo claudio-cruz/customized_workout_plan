@@ -76,16 +76,16 @@ def validate_height_weight(value):
 def validate_gender(value):
     """
     Validate the gender input provided by the user.
-    Return an error message if the input is not valid and repeat the loop.
-    Return a validation message if the input is valid.
+    Print an error message if the input is not valid and repeat the loop.
     """
-    try:
-        gender_options = ['male', 'female']
-        if value.lower() not in gender_options:
-            raise ValueError
+    #try:
+    gender_options = ['male', 'female']
+    if value.lower() not in gender_options:
+        print('Invalid gender input, please write "male" or "female"!\n')
+            #raise ValueError
 
-    except ValueError as e:
-        print('Invalid input:')
+    #except ValueError as e:
+        #print('Invalid input:')
         return False
 
     return True
