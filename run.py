@@ -27,13 +27,13 @@ def get_user_data():
 
         
         print('The height must be a number between 40 and 250 cm.')
-        user_height = float(input('Please enter your height in cm:\n'))
+        user_height = input('Please enter your height in cm:\n')
         if validate_height_weight(user_height):
             print(f'Your height is {user_height}cm, it has been submitted.\n')
         else: continue
 
         print('The weight must be a number between 40 and 250 kg.')
-        user_weight = float(input('Please enter your weight in kg:\n'))
+        user_weight = input('Please enter your weight in kg:\n')
         if validate_height_weight(user_weight):
             print(f'Your weight is {user_weight}kg, it has been submitted.\n')
         else: continue
@@ -64,6 +64,7 @@ def validate_height_weight(value):
     If the input is not a valid number print a message and repeat the loop.
     """
     try:
+        value = float(value)
         if value not in range(40, 250):
             raise ValueError
 
