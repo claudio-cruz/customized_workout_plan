@@ -247,6 +247,9 @@ def main():
     """
     Run all program functions.
     """
+    print('\nWelcome to your customized workout plan app.\n'
+        'Please provide us with the following requested data so we can generate'
+        ' your ideal weight, BMI, and your customized workout plan.\n')
     get_user_data()
     calculate_ideal_weight(user_height, user_gender)
     calculate_bmi(user_weight, user_height)
@@ -258,8 +261,5 @@ def main():
     personalized_workout_plan()
 
 
-print('\nWelcome to your customized workout plan app.')
-print('Please provide us with the following requested data so we can generate'
- ' your ideal weight, BMI, and your customized workout plan.\n')
+if __name__ == '__main__':    main()
 
-main()
