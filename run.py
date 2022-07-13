@@ -78,14 +78,9 @@ def validate_gender(value):
     Validate the gender input provided by the user.
     Print an error message if the input is not valid and repeat the loop.
     """
-    #try:
     gender_options = ['male', 'female']
     if value.lower() not in gender_options:
         print('Invalid gender input, please write "male" or "female"!\n')
-            #raise ValueError
-
-    #except ValueError as e:
-        #print('Invalid input:')
         return False
 
     return True
@@ -109,7 +104,7 @@ def calculate_ideal_weight(height, gender):
 def calculate_bmi(weight, height):
     """
     Calculate the BMI (body mass index).
-    Return a message if the user is underweight, healthy weight, over weith, or obese.
+    Print a message saying underweight, healthy weight, over weith, or obese.
     Print a message with the BMI chart for men and women.
     """
     global user_bmi
@@ -117,19 +112,19 @@ def calculate_bmi(weight, height):
 
     if user_bmi < 18.5:
         print(f'-> {user_name.title()}, your BMI is {round(user_bmi, 1)} '
-        'which means that you are underweight.\n')
+            'which means that you are underweight.\n')
     
     elif user_bmi <= 24.9:
         print(f'-> {user_name.title()}, your BMI is {round(user_bmi, 1)} '
-        'which means that you you have a healthy weight.\n')
+            'which means that you you have a healthy weight.\n')
     
     elif user_bmi <= 29.9:
         print(f'-> {user_name.title()}, your BMI is {round(user_bmi, 1)} '
-        'which means that you are overweight.\n')
+            'which means that you are overweight.\n')
     
     elif user_bmi >= 30.0:
         print(f'-> {user_name.title()}, your BMI is {round(user_bmi, 1)} '
-        'which means that you are obese.\n')
+            'which means that you are obese.\n')
 
     bmi_chart_dic = {
         'Below 18.5': 'Underweight',
@@ -137,6 +132,7 @@ def calculate_bmi(weight, height):
         '25.0-29.9': 'Overweight',
         '30.0 and above': 'Obesity'
     }
+
     print('BMI Chart for Men and Women:')
     for key in bmi_chart_dic:
          print(key, '->', bmi_chart_dic[key])
@@ -145,13 +141,13 @@ def calculate_bmi(weight, height):
 def get_workout_goal(name):
     """
     Get the workout goal input from the user.
-    Print a message with the option chosen and submit it.
+    Print a message with the option chosen and submit it if it is valid.
     """
     global user_workout_goal
 
     while True:
         print(f"\n{name.title()}, tell us wha's your workout goal.")
-        print('Write one of the following 2 options:')
+        print('Write one of the following 2 goal options:')
         user_workout_goal = input('"weight loss" or "gain muscle"\n')
 
         if validate_workout_goal(user_workout_goal):
@@ -162,16 +158,12 @@ def get_workout_goal(name):
 def validate_workout_goal(value):
     """
     Validate the workout goal input provided by the user.
-    Return an error message if the input is not valid and repeat the loop.
-    Return a validation message if the input is valid.
+    Print a message if the input is not valid and repeat the loop.
     """
-    try:
-        workout_goal_options = ['weight loss', 'gain muscle']
-        if value.lower() not in workout_goal_options:
-            raise ValueError
-
-    except ValueError as e:
-        print('Invalid input:')
+    
+    workout_goal_options = ['weight loss', 'gain muscle']
+    if value.lower() not in workout_goal_options:
+        print('Invalid input, please write "weight loss" or "gain muscle"!')
         return False
 
     return True
