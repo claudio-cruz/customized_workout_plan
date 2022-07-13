@@ -9,12 +9,12 @@ import workout_plans
 def get_user_data():
     """
     Get the name, height, weight, and gender input date from the user.
-    Run a while loop to collect all the valid input from the user. 
+    Run a while loop to collect all the valid input from the user.
     Print a message when the input is valid.
-    The loop stops when all the input data is valid. 
+    The loop stops when all the input data is valid.
     """
     while True:
-        
+
         global user_name
         global user_height
         global user_weight
@@ -23,36 +23,39 @@ def get_user_data():
         user_name = input('Please enter your name: (1 to 15 characters max)\n')
         if validate_name(user_name):
             print(f'Hi {user_name.title()}, your name has been submitted.\n')
-        else: continue
+        else:
+            continue
 
-        
         print('The height must be a number between 40 and 250 cm.')
         user_height = input('Please enter your height in cm:\n')
         if validate_height_weight(user_height):
             print(f'Your height is {user_height}cm, it has been submitted.\n')
-        else: continue
+        else:
+            continue
 
         print('The weight must be a number between 40 and 250 kg.')
         user_weight = input('Please enter your weight in kg:\n')
         if validate_height_weight(user_weight):
             print(f'Your weight is {user_weight}kg, it has been submitted.\n')
-        else: continue
+        else:
+            continue
 
         user_gender = input('Enter your gender: ("male" or "female")\n')
         if validate_gender(user_gender):
             print(f'You are a {user_gender}, it has been submitted.\n')
-        else: continue
+        else:
+            continue
         break
 
-        
+
 def validate_name(value):
     """
     Validate the name input provided by the user.
     Return a message if the input is not valid and repeat the loop.
     """
-    
+
     if len(value) not in range(1, 15):
-        print('\nInvalid name. The name input must be 1 to 15 characters max\n')
+        print('\nInvalid name. Name input must be 1 to 15 characters max\n')
         return False
 
     return True
@@ -97,7 +100,7 @@ def calculate_ideal_weight(height, gender):
     if gender == 'male':
         ideal_weight = 50 + (0.91 * (height - 152.4))
         print(f'-> Your ideal weight is {round(ideal_weight, 1)}kg')
-        
+
     elif gender == 'female':
         ideal_weight = 45.5 + (0.91 * (height - 152.4))
         print(f'-> Your ideal weight is {round(ideal_weight, 1)}kg.')
@@ -114,19 +117,19 @@ def calculate_bmi(weight, height):
 
     if user_bmi < 18.5:
         print(f'-> {user_name.title()}, your BMI is {round(user_bmi, 1)} '
-            'which means that you are underweight.\n')
-    
+              'which means that you are underweight.\n')
+
     elif user_bmi <= 24.9:
         print(f'-> {user_name.title()}, your BMI is {round(user_bmi, 1)} '
-            'which means that you you have a healthy weight.\n')
-    
+              'which means that you you have a healthy weight.\n')
+
     elif user_bmi <= 29.9:
         print(f'-> {user_name.title()}, your BMI is {round(user_bmi, 1)} '
-            'which means that you are overweight.\n')
-    
+              'which means that you are overweight.\n')
+
     elif user_bmi >= 30.0:
         print(f'-> {user_name.title()}, your BMI is {round(user_bmi, 1)} '
-            'which means that you are obese.\n')
+              'which means that you are obese.\n')
 
     bmi_chart_dic = {
         'Below 18.5': 'Underweight',
@@ -136,9 +139,9 @@ def calculate_bmi(weight, height):
     }
 
     print('BMI Chart for Men and Women:')
-    
+
     for key in bmi_chart_dic:
-         print(key, '->', bmi_chart_dic[key])
+        print(key, '->', bmi_chart_dic[key])
 
 
 def get_workout_goal(name):
@@ -194,13 +197,14 @@ def validate_week_workout_days(value):
     Return an error message if the input is not valid and repeat the loop.
     Return a validation message if the input is valid.
     """
-    
+
     workout_days_options = ["2", "4", "6"]
     if value not in workout_days_options:
         print('Invalid input, write ("2", "4", or "6")!')
         return False
 
     return True
+
 
 def personalized_workout_plan():
     """
@@ -215,7 +219,7 @@ def personalized_workout_plan():
             workout_plans.weight_loss_male_4days_workout()
         elif user_workout_days == '6':
             workout_plans.weight_loss_male_6days_workout()
-    
+
     # Weight loss female worout plans.
     elif user_workout_goal == 'weight loss' and user_gender == 'female':
         if user_workout_days == '2':
@@ -223,7 +227,7 @@ def personalized_workout_plan():
         elif user_workout_days == '4':
             workout_plans.weight_loss_female_4days_workout()
         elif user_workout_days == '6':
-             workout_plans.weight_loss_female_6days_workout()
+            workout_plans.weight_loss_female_6days_workout()
 
     # Gain muscle male workout plans.
     elif user_workout_goal == 'gain muscle' and user_gender == 'male':
@@ -248,19 +252,22 @@ def main():
     """
     Run all program functions.
     """
-    print('\nWelcome to your customized workout plan app.\n'
-        'Please provide us with the following requested data so we can generate'
-        ' your ideal weight, BMI, and your customized workout plan.\n')
+    print('\n-------------------------------------------------\n'
+          'Welcome to your customized workout plan app.\n'
+          'Please provide us with the following requested data\n'
+          'so we can generate your ideal weight, BMI, and your\n'
+          'customized workout plan.\n'
+          '---------------------------------------------------\n')
     get_user_data()
     calculate_ideal_weight(user_height, user_gender)
     calculate_bmi(user_weight, user_height)
     get_workout_goal(user_name)
     get_week_workout_days()
-    workout_plans.messege_to_user(user_name, user_height, user_weight, 
-            user_gender, ideal_weight, user_bmi, user_workout_goal, 
-            user_workout_days)
+    workout_plans.messege_to_user(user_name, user_height, user_weight,
+                                  user_gender, ideal_weight, user_bmi,
+                                  user_workout_goal, user_workout_days)
     personalized_workout_plan()
 
 
-if __name__ == '__main__':    main()
-
+if __name__ == '__main__':
+    main()
