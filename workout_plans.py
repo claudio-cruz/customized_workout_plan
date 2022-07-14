@@ -5,16 +5,18 @@ def print_inputs(name, height, weight, gender, dl_weight, bmi, goal, days):
     """
     Print user inputs.
     """
-    print(f'Well done {name.title()}, all inputs successfully submitted!\n')
-    print(f'Your height: {height}cm')
-    print(f'Your weight: {weight}kg')
-    print(f'Your gender: {gender}')
-    print(f'Your ideal weight: {round(dl_weight, 1)}kg')
-    print(f'Your BMI: {round(bmi, 1)}')
-    print(f'Your goal: {goal}')
-    print(f'Workout days per week: {days}\n')
+    print(f'Well done {name.title()}, all inputs successfully submitted!\n'
+          '-----------------------------------------------------\n'
+          f'Your height: {height}cm\n'
+          f'Your weight: {weight}kg\n'
+          f'Your gender: {gender}\n'
+          f'Your ideal weight: {round(dl_weight, 1)}kg\n'
+          f'Your BMI: {round(bmi, 1)}\n'
+          f'Your goal: {goal}\n'
+          f'Workout days per week: {days}\n'
 
-    print('This is the personalized workout plan for your needs:')
+          '\nThis is the personalized workout plan for your needs:\n'
+          '-----------------------------------------------------\n')
 
 
 def print_weight_loss_male_2days_workout():

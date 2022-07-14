@@ -1,31 +1,74 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+# **Customized Workout Plan**
 
-Welcome Claudio Cruz,
+Customized Workout Plan is a Python terminal app that runs on Heroku.
 
-This is the Code Institute student template for deploying your third portfolio project, the Python command-line project. The last update to this file was: **August 17, 2021**
+The Customized Workout Plan app has three main goals: getting the BMI (body mass index), ideal weight, and most importantly, getting a customized workout plan for the user's needs.
 
-## Reminders
+The users answer 6 questions. The app runs the code and generates the user's BMI, the user's ideal weight, and the customized workout plan.
 
-* Your code must be placed in the `run.py` file
-* Your dependencies must be placed in the `requirements.txt` file
-* Do not edit any of the other files or your code may not deploy properly
+#link
+#layout image
 
-## Creating the Heroku app
+## How the app works
+Users answer the first four questions: “user name”, “user height”, “user weight”, and “user gender”.
+The app runs the code using the user's first four answers and prints the BMI and ideal weight for the user.
+Then users answer the final two questions, user workout goal (weight loss or gain muscle), and user workout days per week (2, 4 or 6 days).
+The app runs the code again with all user input answers and prints the personalized workout plan for the user's specific needs.
 
-When you create the app, you will need to add two buildpacks from the _Settings_ tab. The ordering is as follows:
+## Features
 
-1. `heroku/python`
-2. `heroku/nodejs`
+- __First four inputs__
 
-You must then create a _Config Var_ called `PORT`. Set this to `8000`
+  - Name, used to identify the user.
+  - Height, used to calculate the ideal weight and BMI.
+  - Weight, used to calculate the ideal weight and BMI.
+  - Gender, used to calculate the BMI and the workout plan.
 
-If you have credentials, such as in the Love Sandwiches project, you must create another _Config Var_ called `CREDS` and paste the JSON into the value field.
+#inputs image
 
-Connect your GitHub repository and deploy as normal.
+- __Ideal weight and BMI__
 
-## Constraints
+  - Calculate the user's ideal weight using the formula:
+    - 50 + (0.91 * (height - 152.4) for male.
+    - 45.5 + (0.91 * (height - 152.4) for female.
+  - Calculate the user's BMI using the formula:
+    - weight / (height / 100)**2 for male and female.
 
-The deployment terminal is set to 80 columns by 24 rows. That means that each line of text needs to be 80 characters or less otherwise it will be wrapped onto a second line.
+#ideal weight and BMI image
 
------
-Happy coding!
+- __BMI chard__
+
+  - Prints the BMI chart for male and female.
+
+#BMI chard image
+
+- __Workout goal input__
+  - Provide two workout goal options:
+    - "weight loss" for lose weight.
+    - "gain muscle" for muscle gain.
+
+#Workout goal input image
+
+- __Workout days per week input__
+
+  - Provide three workout options to users:
+    - "2" for 2 workout days per week.
+    - "4" for 4 workout days per week.
+    - "6" for 6 workout days per week.
+
+#Workout days per week input image
+
+- __Input submission message__
+
+  - If all inputs are correct, print the following:
+    - Print all the user inputs.
+    - Print user ideal weight.
+    - Print user BMI.
+
+#Input submission message image
+
+- __Personalized workout plan__
+
+  - Print to the console the personalized workout plan for each user.
+
+#Personalized workout plan image
