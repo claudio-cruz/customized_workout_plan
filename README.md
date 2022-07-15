@@ -15,6 +15,10 @@ The app runs the code using the user's first four answers and prints the BMI and
 Then users answer the final two questions, user workout goal (weight loss or gain muscle), and user workout days per week (2, 4 or 6 days).
 The app runs the code again with all user input answers and prints the personalized workout plan for the user's specific needs.
 
+## App scheme
+
+#app scheme image
+
 ## Features
 
 - __First four inputs__
@@ -72,3 +76,40 @@ The app runs the code again with all user input answers and prints the personali
   - Print to the console the personalized workout plan for each user.
 
 #Personalized workout plan image
+
+## Future features
+
+  - Create more workout goal options, "build strenght".
+  - Automate de workout goal option decision taking into consideration the BMI.
+  - Create a diet plan for the customer's needs.
+
+## Data Model
+
+I use sixe inputs from the user and store the data in variables.
+With that input data, the code calculates the ideal weight using two inputs,  the user height and user gender.
+It also calculates the BMI using the user height and user weight.
+Using more of the user input data, using data map the code runs and print the personalized workout plan.
+
+## Testing
+
+  - 
+
+## Bugs
+
+- __Solved Bugs__
+
+  -
+
+## Remaining Bugs
+
+  -
+
+## Validator Testing
+
+  - PEP8
+    -No errors were returned from the PEP8online.com
+  
+## Deployment
+
+
+## Credits
