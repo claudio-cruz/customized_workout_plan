@@ -1,2 +1,0 @@
-bmi code and calculation formula
-https://www.javatpoint.com/create-bmi-calculator-using-python 
