@@ -5,6 +5,9 @@ from tomlkit import integer
 
 import workout_plans
 
+workout_goal_options = ['weight loss', 'gain muscle']
+gender_options = ['male', 'female']
+
 
 def get_user_data():
     """
@@ -47,7 +50,7 @@ def get_user_data():
 
     while True:
         user_gender = input('Enter your gender: ("male" or "female")\n')
-        if validate_gender(user_gender):
+        if validate_input(user_gender, gender_options):
             print(f'You are a {user_gender}, it has been submitted.\n')
         else:
             continue
@@ -79,19 +82,6 @@ def validate_height_weight(value):
 
     except ValueError as e:
         print('Invalid input, it must be a number between 40 and 250!\n')
-        return False
-
-    return True
-
-
-def validate_gender(value):
-    """
-    Validate the gender input provided by the user.
-    Print an error message if the input is not valid and repeat the loop.
-    """
-    gender_options = ['male', 'female']
-    if value.lower() not in gender_options:
-        print('Invalid gender input, please write "male" or "female"!\n')
         return False
 
     return True
@@ -162,20 +152,20 @@ def get_workout_goal(name):
         print('Write one of the following 2 goal options:')
         user_workout_goal = input('"weight loss" or "gain muscle"\n')
 
-        if validate_workout_goal(user_workout_goal):
+        if validate_input(user_workout_goal, workout_goal_options):
             print(f'You submited {user_workout_goal} successfully!\n')
             break
 
 
-def validate_workout_goal(value):
+def validate_input(value, option):
     """
+    Validate the gender input provided by the user.
     Validate the workout goal input provided by the user.
     Print a message if the input is not valid and repeat the loop.
     """
-    workout_goal_options = ['weight loss', 'gain muscle']
 
-    if value.lower() not in workout_goal_options:
-        print('Invalid input, please write "weight loss" or "gain muscle"!')
+    if value.lower() not in option:
+        print('Invalid input!\n')
         return False
 
     return True
