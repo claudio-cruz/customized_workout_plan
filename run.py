@@ -47,7 +47,7 @@ def get_user_data():
         print('What is the sex you were assigned at birth?')
         user_gender = input('write one of the options ("male" or "female")\n')
         if validate_input(user_gender, gender_options):
-            print(f'You are a {user_gender}, it has been submitted.\n')
+            print('Your answer has been submitted.\n')
         else:
             continue
         break

@@ -15,7 +15,7 @@ The app runs the code using the user's first four answers and prints the BMI and
 Then users answer the final two questions, user workout goal (weight loss or gain muscle), and user workout days per week (2, 4 or 6 days).
 The app runs the code again with all user input answers and prints the personalized workout plan for the user's specific needs.
 
-## App scheme
+![App scheme]()
 
 #app scheme image
 
