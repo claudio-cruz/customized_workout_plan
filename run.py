@@ -7,9 +7,9 @@ gender_options = ['male', 'female']
 def get_user_data():
     """
     Get the name, height, weight, and gender input date from the user.
-    Run a while loop to collect all the valid input from the user.
+    Run a while loops to collect all the valid input from the user.
     Print a message when the input is valid.
-    The loop stops when all the input data is valid.
+    The loop stops when the input data is valid.
     """
 
     global user_name
@@ -44,7 +44,8 @@ def get_user_data():
         break
 
     while True:
-        user_gender = input('Enter your gender: ("male" or "female")\n')
+        print('What is the sex you were assigned at birth?')
+        user_gender = input('write one of the options ("male" or "female")\n')
         if validate_input(user_gender, gender_options):
             print(f'You are a {user_gender}, it has been submitted.\n')
         else:
@@ -55,7 +56,7 @@ def get_user_data():
 def validate_name(value):
     """
     Validate the name input provided by the user.
-    Return a message if the input is not valid and repeat the loop.
+    Print a message if the input is not valid and repeat the input loop.
     """
 
     if len(value) not in range(1, 15):
@@ -101,10 +102,11 @@ def get_ideal_weight(height, gender):
 def get_bmi(weight, height):
     """
     Calculate the BMI (body mass index).
-    Print a message saying underweight, healthy weight, over weith, or obese.
+    Print a message saying underweight, healthy weight, overweight, or obese.
     Print a message with the BMI chart for men and women.
     """
     global user_bmi
+
     weight = float(weight)
     height = float(height)
     user_bmi = weight / (height / 100)**2
@@ -168,7 +170,7 @@ def validate_input(value, option):
 
 def get_week_workout_days():
     """
-    Get how many days per week the user want to train.
+    Get how many days per week the user wants to train.
     Give 3 input options to the user: 2, 4, or 6 days.
     """
     global user_workout_days
@@ -250,8 +252,8 @@ def main():
           'customized workout plan.\n'
           '---------------------------------------------------\n')
     get_user_data()
-    calculate_ideal_weight(user_height, user_gender)
-    calculate_bmi(user_weight, user_height)
+    get_ideal_weight(user_height, user_gender)
+    get_bmi(user_weight, user_height)
     get_workout_goal(user_name)
     get_week_workout_days()
     workout_plans.print_inputs(user_name, user_height, user_weight,

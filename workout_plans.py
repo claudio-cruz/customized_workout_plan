@@ -5,7 +5,7 @@ def print_inputs(name, height, weight, gender, dl_weight, bmi, goal, days):
     """
     Print user inputs.
     """
-    print(f'Well done {name.title()}, all inputs successfully submitted!\n'
+    print(f'Well done {name.title()}, you submitted all inputs successfully!\n'
           '-----------------------------------------------------\n'
           f'Your height: {height}cm\n'
           f'Your weight: {weight}kg\n'
