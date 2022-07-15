@@ -117,22 +117,19 @@ def calculate_bmi(weight, height):
     weight = float(weight)
     height = float(height)
     user_bmi = weight / (height / 100)**2
+    bmi_message = f'-> {user_name.title()}, your BMI is {round(user_bmi, 1)} '
 
     if user_bmi < 18.5:
-        print(f'-> {user_name.title()}, your BMI is {round(user_bmi, 1)} '
-              'which means that you are underweight.\n')
+        print(f'{bmi_message}'+'which means that you are underweight.\n')
 
     elif user_bmi <= 24.9:
-        print(f'-> {user_name.title()}, your BMI is {round(user_bmi, 1)} '
-              'which means that you have a healthy weight.\n')
+        print(f'{bmi_message}'+'which means that you have a healthy weight.\n')
 
     elif user_bmi <= 29.9:
-        print(f'-> {user_name.title()}, your BMI is {round(user_bmi, 1)} '
-              'which means that you are overweight.\n')
+        print(f'{bmi_message}'+'which means that you are overweight.\n')
 
     elif user_bmi >= 30.0:
-        print(f'-> {user_name.title()}, your BMI is {round(user_bmi, 1)} '
-              'which means that you are obese.\n')
+        print(f'{bmi_message}'+'which means that you are obese.\n')
 
     bmi_chart_dic = {
         'Below 18.5': 'Underweight',
