@@ -6,8 +6,9 @@ The Customized Workout Plan app has three main goals: getting the BMI (body mass
 
 The users answer 6 questions. The app runs the code and generates the user's BMI, the user's ideal weight, and the customized workout plan.
 
-#link
-#layout image
+[Here is the live version of my project.](https://customized-workout-plan.herokuapp.com/)
+
+![Layout](./images/layout_img.png)
 
 ## How the app works
 
@@ -118,6 +119,14 @@ I have manually tested this project by doing the following:
   
 ## Deployment
 
+This project was deployed on Heroku.
+- Steps for deployment:
+  - Go to Heroku.com and create a new app.
+  - Select a name and region.
+  - Go to settings and add config vars (key "Port" and value "8000").
+  - Add two builpacks ("python" and "nodejs").
+  - Go to deploy and connect to Githubrepository code.
+  - Select manual deployment and your app is deployed.
 
 ## Credits
 
