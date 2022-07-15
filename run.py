@@ -13,33 +13,39 @@ def get_user_data():
     Print a message when the input is valid.
     The loop stops when all the input data is valid.
     """
+
+    global user_name
+    global user_height
+    global user_weight
+    global user_gender
+
     while True:
-
-        global user_name
-        global user_height
-        global user_weight
-        global user_gender
-
         user_name = input('Please enter your name: (1 to 15 characters max)\n')
         if validate_name(user_name):
             print(f'Hi {user_name.title()}, your name has been submitted.\n')
         else:
             continue
+        break
 
+    while True:
         print('The height must be a number between 40 and 250 cm.')
         user_height = input('Please enter your height in cm:\n')
         if validate_height_weight(user_height):
             print(f'Your height is {user_height}cm, it has been submitted.\n')
         else:
             continue
+        break
 
+    while True:
         print('The weight must be a number between 40 and 250 kg.')
         user_weight = input('Please enter your weight in kg:\n')
         if validate_height_weight(user_weight):
             print(f'Your weight is {user_weight}kg, it has been submitted.\n')
         else:
             continue
+        break
 
+    while True:
         user_gender = input('Enter your gender: ("male" or "female")\n')
         if validate_gender(user_gender):
             print(f'You are a {user_gender}, it has been submitted.\n')
