@@ -1,8 +1,3 @@
-from email.policy import strict
-from unittest import expectedFailure
-
-from tomlkit import integer
-
 import workout_plans
 
 workout_goal_options = ['weight loss', 'gain muscle']
@@ -87,7 +82,7 @@ def validate_height_weight(value):
     return True
 
 
-def calculate_ideal_weight(height, gender):
+def get_ideal_weight(height, gender):
     """
     Calculate the ideal weight and add it to the variable ideal_weight.
     """
@@ -103,7 +98,7 @@ def calculate_ideal_weight(height, gender):
         print(f'-> Your ideal weight is {round(ideal_weight, 1)}kg.')
 
 
-def calculate_bmi(weight, height):
+def get_bmi(weight, height):
     """
     Calculate the BMI (body mass index).
     Print a message saying underweight, healthy weight, over weith, or obese.
@@ -179,7 +174,7 @@ def get_week_workout_days():
     global user_workout_days
 
     while True:
-        print('\nTell us how many days per week you want to train?')
+        print('Tell us how many days per week you want to train?')
         user_workout_days = input('Write only ("2", "4", or "6") days:\n')
 
         if validate_week_workout_days(user_workout_days):
